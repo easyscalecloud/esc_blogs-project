@@ -1,8 +1,13 @@
+.. dynamodb-data-export-a-decision-maker-s-guide-to-implementation-patterns:
+
 DynamoDB Data Export: A Decision-Maker's Guide to Implementation Patterns
 ==============================================================================
+.. Google Sheet: https://docs.google.com/spreadsheets/d/1bLkPCFAnw4KzOHqdoxOhrpfAkeB_IX0CaGkq9nNKLo8/edit?gid=0#gid=0
+
 - Author: Mac Hu
 - Create At: 2024-11-17
 - Update At: 2024-11-17
+
 
 
 Overview
@@ -59,12 +64,12 @@ Understanding the full table export pattern requires following three key steps:
 
 .. code-block:: python
 
-   response = dynamodb_client.update_continuous_backups(
+    response = dynamodb_client.update_continuous_backups(
        TableName="YourTableName",
        PointInTimeRecoverySpecification={
            "PointInTimeRecoveryEnabled": True
        }
-   )
+    )
 
 2. **Export Table Snapshot**
     - Leverage the `ExportTableToPointInTime <https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb/client/export_table_to_point_in_time.html>`_ API to create a data snapshot
@@ -191,12 +196,12 @@ Think of incremental export as your efficient data shuttle, delivering only what
 
 .. code-block:: python
 
-       # Example S3 path structure
-       s3://bucket/aws_account_id/aws_region/table-name/exports/
-           1970-01-01-00-00-00-000000_2024-03-15-00-00-00-000000/...
-           2024-03-15-00-00-00-000000_2024-03-15-01-00-00-000000/...
-           2024-03-15-01-00-00-000000_2024-03-15-02-00-00-000000/...
-           2024-03-15-02-00-00-000000_2024-03-15-03-00-00-000000/...
+    # Example S3 path structure
+    s3://bucket/aws_account_id/aws_region/table-name/exports/
+        1970-01-01-00-00-00-000000_2024-03-15-00-00-00-000000/...
+        2024-03-15-00-00-00-000000_2024-03-15-01-00-00-000000/...
+        2024-03-15-01-00-00-000000_2024-03-15-02-00-00-000000/...
+        2024-03-15-02-00-00-000000_2024-03-15-03-00-00-000000/...
 
 The incremental export pattern strikes a balance between resource efficiency and data freshness, making it ideal for many analytical workflows. However, modern applications increasingly require real-time data access and immediate insights. Let's explore our final pattern, Stream Export, which addresses these near real-time requirements through a fundamentally different approach to data extraction.
 

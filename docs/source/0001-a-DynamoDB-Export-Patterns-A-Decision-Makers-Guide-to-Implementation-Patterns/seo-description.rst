@@ -1,0 +1,1 @@
+Learn how to choose between full table, incremental, and stream-based DynamoDB export patterns. Includes decision frameworks for AWS architect.

@@ -1,0 +1,1 @@
+DynamoDB Data Export Patterns: Strategic Guide for AWS User
