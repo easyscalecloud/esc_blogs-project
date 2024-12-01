@@ -5,3 +5,5 @@ Welcome to EasyScaleCloud Blogs
 ==============================================================================
 .. .. image:: https://esc-blogs.readthedocs.io/en/latest/_static/esc_blogs-logo.png
     :target: https://esc-blogs.readthedocs.io/en/latest/
+
+All EasyScaleCloud public facing blogs content goes to this Git repo.
