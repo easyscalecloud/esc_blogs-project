@@ -1,0 +1,1 @@
+Master DynamoDB full table exports with proven architecture patterns and production implementation guidance for scalable data pipelines.

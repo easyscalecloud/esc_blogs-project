@@ -1,4 +1,4 @@
-.. dynamodb-data-export-a-decision-maker-s-guide-to-implementation-patterns:
+.. _dynamodb-data-export-a-decision-maker-s-guide-to-implementation-patterns:
 
 DynamoDB Data Export: A Decision-Maker's Guide to Implementation Patterns
 ==============================================================================
